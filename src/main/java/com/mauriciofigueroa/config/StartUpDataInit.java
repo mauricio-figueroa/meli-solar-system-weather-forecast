@@ -14,7 +14,7 @@ public class StartUpDataInit {
 
     private final SolarSystemWeatherForecastService solarSystemWeatherForecastService;
 
-    @Value("${forecast.days-to-calculate.value}")
+    @Value("${forecast.init-db.days-to-calculate}")
     private Integer daysToCalculateForecast;
 
     @PostConstruct
