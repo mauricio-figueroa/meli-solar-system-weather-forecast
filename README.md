@@ -4,6 +4,7 @@
 - Maven
 - Spring Boot 2.0
 - PostgreSQL
+- Lombok
 
 
 

@@ -6,9 +6,7 @@ import com.mauriciofigueroa.model.WeatherForecast;
 import com.mauriciofigueroa.model.WeatherForecastReport;
 import com.mauriciofigueroa.persistence.ForecastRepository;
 import lombok.RequiredArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.awt.geom.Point2D;
@@ -18,17 +16,14 @@ import static com.mauriciofigueroa.utils.GeometryUtils.doubleEquals;
 import static com.mauriciofigueroa.utils.GeometryUtils.triangleArea;
 import static com.mauriciofigueroa.utils.GeometryUtils.trianglePerimeter;
 
-@Service
+@Slf4j
 @RequiredArgsConstructor
-public class SolarSystemService {
-
-    private static final Logger logger = LoggerFactory.getLogger(SolarSystemService.class);
+@Service
+public class SolarSystemWeatherForecastService {
 
     private final SolarSystem solarSystem;
     private final ForecastRepository forecastRepository;
 
-    @Value("${forecast-report.days}")
-    private Integer forecastReportDaysCant;
 
     public Forecast getForecastByDay(int day) {
 
@@ -44,7 +39,7 @@ public class SolarSystemService {
         }
     }
 
-    public WeatherForecastReport getReport(int years) {
+    public WeatherForecastReport getReport(Integer totalDays) {
         WeatherForecastReport weatherForecastReport = new WeatherForecastReport();
 
         double maxPerimeter = 0;
@@ -52,7 +47,7 @@ public class SolarSystemService {
         Forecast lastForecast = null;
 
         int currentDay;
-        for (currentDay = 0; currentDay < forecastReportDaysCant; currentDay++) {
+        for (currentDay = 0; currentDay < totalDays; currentDay++) {
             Forecast currentForecast = getForecastByDay(currentDay);
 
             if (currentDay == 0) {
@@ -112,16 +107,18 @@ public class SolarSystemService {
     }
 
     public void calulateAndPersistForecastForDays(int daysToCalculateForecast) {
-        logger.info("SolarSystemService.initDatabase");
+        log.info("SolarSystemService.initDatabase");
 
         for (int currentDay = 0; currentDay < daysToCalculateForecast; currentDay++) {
             Forecast currentForecast = getForecastByDay(currentDay);
 
-            logger.info("Trying to save forecast [{}]", currentForecast);
+            log.info("Trying to save forecast [{}]", currentForecast);
             forecastRepository.save(currentForecast);
 
-            logger.info("Forecast [{}] save successful", currentForecast);
+            log.info("Forecast [{}] save successful", currentForecast);
         }
     }
 
 }
+
+
