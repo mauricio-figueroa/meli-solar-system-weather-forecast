@@ -107,7 +107,7 @@ public class SolarSystemWeatherForecastService {
     }
 
     public void calulateAndPersistForecastForDays(int daysToCalculateForecast) {
-        log.info("SolarSystemService.initDatabase");
+        log.info("Calculate and persist forecast for [{}] days", daysToCalculateForecast);
 
         for (int currentDay = 0; currentDay < daysToCalculateForecast; currentDay++) {
             Forecast currentForecast = getForecastByDay(currentDay);

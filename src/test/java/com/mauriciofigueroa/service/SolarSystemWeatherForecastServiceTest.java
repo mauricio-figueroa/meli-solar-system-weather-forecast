@@ -27,15 +27,11 @@ public class SolarSystemWeatherForecastServiceTest {
 
     private SolarSystemWeatherForecastService target;
 
-    private Planet ferrengi;
-    private Planet betasoide;
-    private Planet vulkano;
-
     @Before
     public void setUp() {
-        ferrengi = new Planet(1, true, 500);
-        betasoide = new Planet(3, true, 2000);
-        vulkano = new Planet(5, false, 1000);
+        Planet ferrengi = new Planet(1, true, 500);
+        Planet betasoide = new Planet(3, true, 2000);
+        Planet vulkano = new Planet(5, false, 1000);
 
         SolarSystem solarSystem = new SolarSystem(ferrengi, betasoide, vulkano);
 
@@ -70,7 +66,7 @@ public class SolarSystemWeatherForecastServiceTest {
     public void getReport3650Days() {
         WeatherForecastReport forecastReport = target.getReport(3650);
 
-        Assert.assertEquals(Integer.valueOf(2808),forecastReport.getMaxRainyDay());
+        Assert.assertEquals(Integer.valueOf(2808), forecastReport.getMaxRainyDay());
         Map<WeatherForecast, Integer> forecastsPeriods = forecastReport.getForecastsPeriods();
         Assert.assertEquals(Integer.valueOf(81), forecastsPeriods.get(WeatherForecast.RAIN));
         Assert.assertEquals(Integer.valueOf(41), forecastsPeriods.get(WeatherForecast.DROUGHT));
@@ -93,7 +89,7 @@ public class SolarSystemWeatherForecastServiceTest {
     public void calculateAndPersisteForecast() {
         target.calulateAndPersistForecastForDays(3650);
 
-        Mockito.verify(forecastRepository,Mockito.times(3650)).save(any());
+        Mockito.verify(forecastRepository, Mockito.times(3650)).save(any());
     }
 
 }
