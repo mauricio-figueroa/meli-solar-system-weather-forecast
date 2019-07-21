@@ -43,7 +43,7 @@ public class SolarSystemWeatherForecastService {
         WeatherForecastReport weatherForecastReport = new WeatherForecastReport();
 
         double maxPerimeter = 0;
-        int maxPerimeterDay = -1;
+        Integer maxPerimeterDay = null;
         Forecast lastForecast = null;
 
         int currentDay;

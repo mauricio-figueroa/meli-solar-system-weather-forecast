@@ -9,7 +9,7 @@ import java.util.Map;
 @Data
 public class WeatherForecastReport {
 
-    private int maxRainyDay;
+    private Integer maxRainyDay;
 
     private Map<WeatherForecast, Integer> forecastsPeriods;
 
