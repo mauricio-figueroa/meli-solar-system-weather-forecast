@@ -8,7 +8,8 @@
 
 
 Desarrollé el ejercicio propuesto y lo subi a **Heroku**, en la siguiente url podrán ver desarrollados los puntos 1, 2 y 3:
-```sh
+```sh 
+https://meli-test-weather-forecast.herokuapp.com/forecast-report
 
 Retorna un JSON con el siguiente formato:
  {
@@ -26,6 +27,7 @@ Retorna un JSON con el siguiente formato:
  Luego podrán consultar el pronóstico del dia extraido desde la base de datos aqui:
 
  ```sh
+ https://meli-test-weather-forecast.herokuapp.com/weather-forecast?day=720
 
 Retorna un JSON con el siguiente formato:
 {
