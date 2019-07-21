@@ -37,8 +37,8 @@ Retorna un JSON con el siguiente formato:
     "perimeter": 0
 }
  ```
- #### Aclaración 
- **Para correr el proyecto localmente hay que instalar el pluggin de Lombok y levantarlo con el perfil 'dev' (spring_profiles_active=dev como variable de entorno)**
+ ### Aclaración 
+ Para correr el proyecto localmente hay que instalar el pluggin de Lombok y levantarlo con el perfil 'dev' (spring_profiles_active=dev como variable de entorno)
 
  ### CONSIDERACIONES A LA HORA DE DESARROLLAR EL EJERCICIO
  - La carga de datos a la base se realiza cuando la aplicación levanta.
