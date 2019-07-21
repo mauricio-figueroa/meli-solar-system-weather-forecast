@@ -23,7 +23,7 @@ public class ForecastController {
     private final ForecastRepository forecastRepository;
     private final SolarSystemWeatherForecastService solarSystemWeatherForecastService;
 
-    @Value("${forecast-report.days}")
+    @Value("${forecast.report.days}")
     private Integer forecastReportTotalDays;
 
 
