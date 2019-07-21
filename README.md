@@ -37,8 +37,8 @@ Retorna un JSON con el siguiente formato:
     "perimeter": 0
 }
  ```
-
-
+ #### Aclaración 
+ **Para correr el proyecto localmente hay que instalar el pluggin de Lombok y levantarlo con el perfil 'dev' (spring_profiles_active=dev como variable de entorno)**
 
  ### CONSIDERACIONES A LA HORA DE DESARROLLAR EL EJERCICIO
  - La carga de datos a la base se realiza cuando la aplicación levanta.
@@ -54,4 +54,3 @@ Retorna un JSON con el siguiente formato:
 - Las rectas tienen área y perímetro igual 0.
 - Un punto esta contenido dentro de un triángulo, si el área del mismo es igual a la suma de las áreas de los 3 triángulos que se pueden formar entre el punto del sol y los vértices del triángulo.
 - Consideré persistir el perimetro, con el fin de consultar en la base de datos el máximo, para pronosticar la intensidad de lluvia.
-- **Para correr el proyecto localmente hay que instalar el pluggin de Lombok y levantarlo con el perfil 'dev' (spring_profiles_active=dev como variable de entorno)**
