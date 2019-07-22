@@ -12,8 +12,6 @@ import java.util.Optional;
 
 public interface ForecastRepository extends CrudRepository<Forecast, Integer> {
 
-    //TODO ESTO NO DEBERIA HACER FALTA
-    @Query("SELECT f FROM forecast f WHERE f.day = :day")
-    public Optional<Forecast> findByDay(@Param("day") int day);
+    public Optional<Forecast> findByDay(Integer day);
 
 }
