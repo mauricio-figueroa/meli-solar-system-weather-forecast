@@ -7,6 +7,7 @@ import com.mauriciofigueroa.persistence.ForecastRepository;
 import com.mauriciofigueroa.service.SolarSystemWeatherForecastService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,10 +29,16 @@ public class ForecastController {
 
 
     @GetMapping(value = "/weather-forecast")
-    public ResponseEntity weatherForecast(@RequestParam(value = "day") int day) {
+    public ResponseEntity weatherForecast(@RequestParam(value = "day") String day) {
+        log.info("Trying to get forecast for day [{}]", day);
 
-        log.info("ForecastController.weatherForecast Trying to get forecast for day [{}]", day);
-        Optional<Forecast> forecast = forecastRepository.findByDay(day);
+        if(!StringUtils.isNumeric(day)){
+            return ResponseEntity.badRequest().body(ImmutableMap.of("Message", "The 'day' parameter must be a number"));
+        }
+
+        Integer dayParsed = Integer.valueOf(day);
+
+        Optional<Forecast> forecast = forecastRepository.findByDay(dayParsed);
 
         if (forecast.isPresent()) {
             return ResponseEntity.ok().body(forecast);
@@ -42,8 +49,8 @@ public class ForecastController {
 
     @GetMapping(value = "/forecast-report")
     public ResponseEntity forecastReport() {
+        log.info("Trying to get forecast report");
 
-        log.info("ForecastController.forecastReport");
         return ResponseEntity.ok().body(solarSystemWeatherForecastService.getReport(forecastReportTotalDays));
     }
 
