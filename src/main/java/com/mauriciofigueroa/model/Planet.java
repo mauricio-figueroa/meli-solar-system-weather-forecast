@@ -4,7 +4,6 @@ import lombok.Data;
 
 import java.awt.geom.Point2D;
 
-import static java.lang.Math.cos;
 import static java.lang.Math.toRadians;
 
 @Data
@@ -20,12 +19,11 @@ public class Planet {
         this.sunDistance = sunDistance;
     }
 
-
     public Point2D getCurrentPosition(int day) {
 
         int currentGrade = clockWise ? day * angularVelocity : day * -angularVelocity;
 
-        double x = sunDistance * cos(toRadians(currentGrade - 90));
+        double x = sunDistance * Math.cos(toRadians(currentGrade - 90));
         double y = sunDistance * Math.sin(toRadians(currentGrade + 90));
 
         return new Point2D.Double(x, y);

@@ -23,7 +23,6 @@ public class Forecast {
     @Column
     private Integer day;
 
-
     @Column(name = "wheather_forecast")
     @Enumerated(EnumType.STRING)
     private WeatherForecast weatherForecast;

@@ -35,6 +35,7 @@ public class SolarSystemWeatherForecastService {
             Double trianglePerimeter = trianglePerimeter(solarSystem.getPlanet1Position(day), solarSystem.getPlanet2Position(day), solarSystem.getPlanet3Position(day));
 
             WeatherForecast weatherForecast = triangleWeatherForecastByDay(day);
+
             return new Forecast(day, weatherForecast, trianglePerimeter);
         }
     }
