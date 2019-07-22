@@ -1,6 +1,6 @@
 # SOLAR SYSTEM WEATHER FORECAST
 
-### Ejercicio de Mercado Mibre realizado por Mauricio Figueroa
+### Ejercicio de Mercado Libre realizado por Mauricio Figueroa
  
 ## Tecnologías utilizadas:
 - Java 8
