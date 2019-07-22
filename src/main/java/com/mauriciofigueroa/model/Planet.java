@@ -1,8 +1,6 @@
 package com.mauriciofigueroa.model;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.awt.geom.Point2D;
 
