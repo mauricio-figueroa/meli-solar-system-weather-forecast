@@ -26,7 +26,7 @@ Retorna un JSON con el siguiente formato:
 
 
 
- Luego podrán consultar el pronóstico del dia extraido desde la base de datos aqui:
+ Luego podrán consultar el pronóstico del día extraido desde la base de datos aqui:
 
  ```sh
  https://meli-test-weather-forecast.herokuapp.com/weather-forecast?day=720
@@ -43,7 +43,7 @@ Retorna un JSON con el siguiente formato:
 
  ## CONSIDERACIONES A LA HORA DE DESARROLLAR EL EJERCICIO
  - La carga de datos a la base se realiza cuando la aplicación levanta.
-- En el día 0 del sistema solar, todos los planetas están alineados en el punto mas alto de su órbita (angulo de 90 grados).
+- En el día 0 del sistema solar, todos los planetas están alineados en el punto mas alto de su órbita (ángulo de 90 grados).
 - Un año tiene 365 días.
 - El sistema solar posee a su sol en el origen (P(0,0)).
 - Las órbitas son circulares.
