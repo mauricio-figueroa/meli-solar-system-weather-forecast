@@ -38,10 +38,10 @@ Retorna un JSON con el siguiente formato:
     "perimeter": 0
 }
  ```
- ### Aclaración 
+ ## Aclaración 
  Para correr el proyecto localmente hay que instalar el pluggin de Lombok y levantarlo con el perfil 'dev' (spring_profiles_active=dev como variable de entorno)
 
- ### CONSIDERACIONES A LA HORA DE DESARROLLAR EL EJERCICIO
+ ## CONSIDERACIONES A LA HORA DE DESARROLLAR EL EJERCICIO
  - La carga de datos a la base se realiza cuando la aplicación levanta.
 - En el día 0 del sistema solar, todos los planetas están alineados en el punto mas alto de su órbita (angulo de 90 grados).
 - Un año tiene 365 días.
